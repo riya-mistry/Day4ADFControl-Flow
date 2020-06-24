@@ -18,7 +18,7 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
+							"type": "AzureBlobFSReadSettings",
 							"recursive": true
 						},
 						"formatSettings": {
@@ -28,7 +28,7 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -48,13 +48,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset",
+						"referenceName": "sourcedataset1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "sinkstore",
+						"referenceName": "sinkdataset",
 						"type": "DatasetReference"
 					}
 				]
