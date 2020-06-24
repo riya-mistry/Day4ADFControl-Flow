@@ -157,6 +157,12 @@
 				"type": "string"
 			}
 		},
+		"variables": {
+			"receiver": {
+				"type": "String",
+				"defaultValue": "Riya.mistry@studentpartner.com"
+			}
+		},
 		"annotations": []
 	}
 }

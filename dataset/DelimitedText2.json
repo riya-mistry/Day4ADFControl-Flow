@@ -10,8 +10,15 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "input",
-				"container": "adfv2branch"
+				"fileName": {
+					"value": "@CONCAT(pipeline().RunId, '.txt')",
+					"type": "Expression"
+				},
+				"folderPath": "output",
+				"container": {
+					"value": "@pipeline().parameters.sinkBlobContainer",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
