@@ -5,12 +5,6 @@
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"sourceBlobContainer": {
-				"type": "string",
-				"defaultValue": "@pipeline().parameters.sourceBlobContainer"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
