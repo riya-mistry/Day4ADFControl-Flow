@@ -10,10 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@CONCAT(pipeline().RunId, '.txt')",
-					"type": "Expression"
-				},
 				"folderPath": "input",
 				"fileSystem": "adfv2branch"
 			},
@@ -22,6 +18,15 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "FirstName",
+				"type": "String"
+			},
+			{
+				"name": "LastName",
+				"type": "String"
+			}
+		]
 	}
 }
