@@ -12,10 +12,7 @@
 				"type": "AzureBlobStorageLocation",
 				"fileName": "emp.txt",
 				"folderPath": "input",
-				"container": {
-					"value": "@sourceBlobContainer",
-					"type": "Expression"
-				}
+				"container": "adfv2branch"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
