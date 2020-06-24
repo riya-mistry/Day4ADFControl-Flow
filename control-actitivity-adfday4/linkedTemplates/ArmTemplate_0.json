@@ -55,12 +55,6 @@
 					"referenceName": "AzureBlobStorage1",
 					"type": "LinkedServiceReference"
 				},
-				"parameters": {
-					"sourceBlobContainer": {
-						"type": "string",
-						"defaultValue": "@pipeline().parameters.sourceBlobContainer"
-					}
-				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -68,10 +62,7 @@
 						"type": "AzureBlobStorageLocation",
 						"fileName": "emp.txt",
 						"folderPath": "input",
-						"container": {
-							"value": "@sourceBlobContainer",
-							"type": "Expression"
-						}
+						"container": "adfv2branch"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
@@ -93,12 +84,6 @@
 					"referenceName": "SourceBlobDataset",
 					"type": "LinkedServiceReference"
 				},
-				"parameters": {
-					"sinkBlobContainer": {
-						"type": "string",
-						"defaultValue": "@pipeline().parameters.sinkBlobContainer"
-					}
-				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -109,10 +94,7 @@
 							"type": "Expression"
 						},
 						"folderPath": "input",
-						"container": {
-							"value": "@sinkBlobContainer",
-							"type": "Expression"
-						}
+						"container": "adfv2branch"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
