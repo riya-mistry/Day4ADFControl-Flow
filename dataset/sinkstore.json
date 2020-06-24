@@ -1,0 +1,36 @@
+{
+	"name": "sinkstore",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SourceBlobDataset",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sinkBlobContainer": {
+				"type": "string",
+				"defaultValue": "@pipeline().parameters.sinkBlobContainer"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@CONCAT(pipeline().RunId, '.txt')",
+					"type": "Expression"
+				},
+				"folderPath": "input",
+				"container": {
+					"value": "@sinkBlobContainer",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
